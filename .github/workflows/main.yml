@@ -28,7 +28,8 @@ jobs:
         file: ./Dockerfile_client
         push: true
         tags: tncontaineregistry.azurecr.io/${{ secrets.USERNAME }}-client:${{ github.sha }}
-            - name: 'Deploy to Azure Container Instances'
+        
+    - name: 'Deploy to Azure Container Instances'
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: 'ContainerTraining'
